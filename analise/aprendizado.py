@@ -22,6 +22,7 @@ class Learn():
         """
         Método que inicia aprendizado.
         """
+        training_set, labels = separador(DATA_SET)
         # elimina stopwords, analisa palavra por palavra, deixa em caixa baixa
         # remove acentos e usa idf.
         self.tf_vectorizer = TfidfVectorizer(
@@ -34,9 +35,9 @@ class Learn():
                                         )
 
         # atribui peso a cada palavra
-        feature = self.tf_vectorizer.fit_transform(self.training_set)
+        feature = self.tf_vectorizer.fit_transform(training_set)
         # classifica usando as features(treino)
-        self.classificator.fit(feature, self.labels)
+        self.classificator.fit(feature, labels)
 
     def one_zero(self):
         """
