@@ -19,7 +19,7 @@ analise_de_sentimento é um sistema que retorna o sentimento de uma determinada 
 
 ## Rodando:
 
-- Acesse o projeto django com: `python analise`
+- Rode o comando: `python analise`
 
 
-   - mais informações no código.
+   - Mais informações no código.
