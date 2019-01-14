@@ -31,7 +31,7 @@ def first_menu():
             print('-----------------'+RED+'ANÁLISE DE SENTIMENTO'+RESET+'------------------')
             print('--------------------------------------------------------')
             print('--- '+RED+'1'+RESET+' - '+BLUE+'Teste de qualidade do modelo criado.'+RESET+' -----------')
-            print('--- '+RED+'2'+RESET+' - '+BLUE+'identificar sentimento de frase(em inglês).'+RESET+' ----')
+            print('--- '+RED+'2'+RESET+' - '+BLUE+'Identificar sentimento de frase(em inglês).'+RESET+' ----')
             print('--------- '+RED+'Ctrl+C'+RESET+' - '+BLUE+'Para sair do programa.'+RESET+' --------------')
             print('--------------------------------------------------------')
             return '--------------------------------------------------------'
@@ -51,7 +51,7 @@ def first_menu():
         # que ser vira como parametro para a chamada do método one(),  que retorna
         # a informação de positivo ou negativo, dependendo da frase
         elif opt == 2:
-            print('-------'+RED+'Digite a prase em inglês a ser analisada:'+RESET+'--------')
+            print('-------'+RED+'Digite a frase em inglês a ser analisada:'+RESET+'--------')
             data = str(input(CYAN+'>>>'+RESET))
             print(REVERSE+'                   '+ln.one(data)+'                    '+RESET)
             # chamo o menu principal novamente

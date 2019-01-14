@@ -10,7 +10,7 @@ from material.separador import separador
 
 class Learn():
     """
-    Classe responsavel pele aprendizado da maquina e classificação.
+    Classe responsavel pelo aprendizado da maquina e classificação.
     """
     def __init__(self):
         # treina e classifica
@@ -42,15 +42,16 @@ class Learn():
         """
         Método que efetua teste de acurácia.
         """
+        text, label_correct = separador(LISTA_TESTE)
         # vetoriza utilizando apenas frses sem labels
-        vector_text = self.tf_vectorizer.transform(self.text)
+        vector_text = self.tf_vectorizer.transform(text)
         # efetua predição, adicionando labels
         predictions = self.classificator.predict(vector_text)
         erro = 0
         acerto = 0
         # laço que compara predição com label corretos e faz contagem
-        for prediction, self.label_correct in zip(predictions, self.label_correct):
-            if self.label_correct == prediction:
+        for prediction, label_correct in zip(predictions, label_correct):
+            if label_correct == prediction:
                 acerto+= 1
             else:
                 erro+= 1
