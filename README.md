@@ -7,7 +7,7 @@ analise_de_sentimento é um sistema que retorna o sentimento de uma determinada 
 
 ## Instalação de requisitos (NECESSÁRIO:Python 3.6.0+, pip(Atualizado))
 
-- Caracteres ANSI foram utiliados, portanto recomendo um terminal que tenha suporte
+- Caracteres ANSI foram utilizados, portanto, no Windows o menu pode ficar um tanto desconfigurado, mas funciona normalmente(recomento linux ou mac).
 
 - Crie um ambiente virtual de sua preferência (Recomendado/Opcional)
 
