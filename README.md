@@ -7,9 +7,11 @@ analise_de_sentimento é um sistema que retorna o sentimento de uma determinada 
 
 ## Instalação de requisitos (NECESSÁRIO:Python 3.6.0+, pip(Atualizado))
 
+- Caracteres ANSI foram utiliados, portanto recomendo um terminal que tenha suporte
+
 - Crie um ambiente virtual de sua preferência (Recomendado/Opcional)
 
-- Faça um clone do projeto: `github.com/Luanlpg/analise_de_sentimento.git`
+- Faça um clone do projeto: `git clone https://github.com/Luanlpg/analise_de_sentimento.git`
 
 - Acesse o repositório: `cd analise_de_sentimento`
 
