@@ -1,0 +1,70 @@
+import sys
+import nltk
+
+from aprendizado import Learn
+
+RED   = "\033[1;31m"
+BLUE  = "\033[1;34m"
+CYAN  = "\033[1;36m"
+RESET = "\033[0;0m"
+REVERSE = "\033[;7m"
+
+# baixa stop words
+nltk.download('punkt')
+nltk.download('stopwords')
+
+# instancio a classe de aprendizado
+ln = Learn()
+# chamo o meto de iniciaização de aprendizado
+ln.start()
+
+def first_menu():
+    """
+    Método de execução de menu.
+    """
+    try:
+        def prt():
+            """
+            Menu principal.
+            """
+            print('--------------------------------------------------------')
+            print('-----------------'+RED+'ANÁLISE DE SENTIMENTO'+RESET+'------------------')
+            print('--------------------------------------------------------')
+            print('--- '+RED+'1'+RESET+' - '+BLUE+'Teste de qualidade do modelo criado.'+RESET+' -----------')
+            print('--- '+RED+'2'+RESET+' - '+BLUE+'identificar sentimento de frase(em inglês).'+RESET+' ----')
+            print('--------- '+RED+'Ctrl+C'+RESET+' - '+BLUE+'Para sair do programa.'+RESET+' --------------')
+            print('--------------------------------------------------------')
+            return '--------------------------------------------------------'
+        # chamo o metodo prt()
+        print(prt())
+        # armazeno a entrada do usuario na variável opt
+        opt = int(input(CYAN+'>>>'+RESET))
+        # caso a entrada seja igual a 1, apresento o retorno do método one_zero()
+        # que traz a informações do teste de acurácia utilizando 300 frases
+        if opt == 1:
+            erro, acuracia = ln.one_zero()
+            print(REVERSE+'          '+erro+'            '+RESET)
+            print(REVERSE+'            '+acuracia+'             '+RESET)
+            # chamo o menu principal novamente
+            return first_menu()
+        # caso a entrada seja igual a 2, solicito ao usuário uma frase em inglês
+        # que ser vira como parametro para a chamada do método one(),  que retorna
+        # a informação de positivo ou negativo, dependendo da frase
+        elif opt == 2:
+            print('-------'+RED+'Digite a prase em inglês a ser analisada:'+RESET+'--------')
+            data = str(input(CYAN+'>>>'+RESET))
+            print(REVERSE+'                   '+ln.one(data)+'                    '+RESET)
+            # chamo o menu principal novamente
+            return first_menu()
+        # caso a entrada seja diferente de 1 e 2, retorno uma mensagem de erro
+        else:
+            print('------------------'+RED+'ENTRADA INVALIDA!!!'+RESET+'-------------------')
+            # chamo o menu principal novamente
+            return first_menu()
+    # em caso de KeyboardInterrupt(Ctrl_C) retorno mensagem de finalização e feco o programa
+    except KeyboardInterrupt:
+        print('---------------------'+RED+'FIM!!!'+RESET+'------------------------')
+        sys.exit()
+
+
+first_menu()
